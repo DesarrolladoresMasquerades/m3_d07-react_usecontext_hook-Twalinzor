@@ -2,9 +2,12 @@ import { NavLink } from 'react-router-dom';
 
 import { useContext } from 'react';
 import { ThemeContext } from './../context/theme.context';
+import { AuthContext } from './../context/auth.context';
 
 function Navbar() {
   const {theme, toggleTheme} = useContext(ThemeContext);
+
+  const { loggedInUser } = useContext(AuthContext);
 
   return (
     <nav className={"Navbar " + theme}>
